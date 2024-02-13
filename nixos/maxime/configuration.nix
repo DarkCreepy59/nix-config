@@ -16,6 +16,8 @@
     };
 
     imports = [
+        inputs.aagl-on-nix.nixosModules.default
+
         ./hardware-configuration.nix
 
         ./audio.nix
