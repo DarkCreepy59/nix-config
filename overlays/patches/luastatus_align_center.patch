@@ -1,0 +1,14 @@
+diff --git a/barlibs/dwm/dwm.c b/barlibs/dwm/dwm.c
+index ecdcdfe..f67b723 100644
+--- a/barlibs/dwm/dwm.c
++++ b/barlibs/dwm/dwm.c
+@@ -99,7 +99,8 @@ static bool redraw(LuastatusBarlibData *bd)
+     for (size_t i = 0; i < n; ++i) {
+         if (bufs[i].size) {
+             if (joined->size) {
+-                ls_string_append_s(joined, sep);
++                if (bufs[i].data[0] != ';')
++                    ls_string_append_s(joined, sep);
+             }
+             ls_string_append_b(joined, bufs[i].data, bufs[i].size);
+         }
