@@ -1,0 +1,16 @@
+262c262,263
+< 	BAR_ALIGN_LAST
+---
+> 	BAR_ALIGN_LAST,
+> 	BAR_ALIGN_CENTER_MAX,
+1971a1973,1982
+> 
+>         case BAR_ALIGN_CENTER_MAX:
+> 			// bar->x[r] = lx + lw / 2 - w / 2;
+> 			bar->x[r] = bar->mon->mw / 2 - w / 2;
+> 			if (lx == rx) {
+> 				rw = rx + rw - bar->x[r] - w;
+> 				rx = bar->x[r] + w;
+> 			}
+> 			lw = bar->x[r] - lx;
+>             break;
