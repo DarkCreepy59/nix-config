@@ -4,7 +4,6 @@
     stdenv
 }: stdenv.mkDerivation {
     name = "dmenu-flexipatch";
-    binaryName = "dmenu";
     src = pkgs.fetchFromGitHub {
         owner = "bakkeby";
         repo = "dmenu-flexipatch";
@@ -31,8 +30,9 @@
     installPhase = "make install";
 
     meta = with lib; {
-        homepage = "https://github.com/bakkeby/dmenu-flexipatch";
         description = "A dmenu build with preprocessor directives to decide which patches to include during build time";
+        homepage = "https://github.com/bakkeby/dmenu-flexipatch";
+        mainProgram = "dmenu";
         licence = licences.mit;
         platforms = platforms.linux;
     };

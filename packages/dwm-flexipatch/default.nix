@@ -32,8 +32,9 @@
     installPhase = "make install";
 
     meta = with lib; {
-        homepage = "https://github.com/bakkeby/dwm-flexipatch";
         description = "A dwm build with preprocessor directives to decide which patches to include during build time";
+        homepage = "https://github.com/bakkeby/dwm-flexipatch";
+        mainProgram = "dwm";
         licence = licences.mit;
         platforms = platforms.linux;
     };
