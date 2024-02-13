@@ -21,6 +21,7 @@
         acpi
         brightnessctl
         btop
+        ffmpeg
         file
         neofetch
         parallel
