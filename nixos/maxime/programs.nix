@@ -1,17 +1,15 @@
 {
-    config,
     inputs,
+    outputs,
     lib,
-    modulesPath,
-    options,
+    config,
     pkgs,
-    specialArgs,
-    unstable
+    ...
 }: {
     programs = {
         git.enable = true;
         neovim.enable = true;
-        neovim.package = unstable.neovim-unwrapped;
+        neovim.package = pkgs.unstable.neovim-unwrapped;
         nano.enable = false; # Because we use neovim
         adb.enable = true;
     };

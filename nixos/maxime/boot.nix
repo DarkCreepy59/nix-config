@@ -1,11 +1,10 @@
 {
-    config,
     inputs,
+    outputs,
     lib,
-    modulesPath,
-    options,
-    specialArgs,
-    unstable
+    config,
+    pkgs,
+    ...
 }: {
     boot = {
         loader = {
@@ -23,10 +22,10 @@
             network.wait-online.enable = false;
         };
 
-        kernelPackages = unstable.linuxKernel.packages.linux_zen;
+        kernelPackages = pkgs.unstable.linuxKernel.packages.linux_zen;
 
         tmp.useTmpfs = true;
     };
 
-    systemd.package = unstable.systemd;
+    systemd.package = pkgs.unstable.systemd;
 }

@@ -20,21 +20,24 @@
         nixpkgs-unstable,
         home-manager,
         aagl-on-nix
-    } @ inputs: {
+    } @ inputs: let
+        inherit (self) outputs;
+
+        systems = [
+            "x86_64-linux"
+            "aarch64-linux"
+        ];
+
+        forAllSystems = nixpkgs.lib.genAttrs systems;
+    in {
+        packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
+
+        overlays = import ./overlays { inherit inputs; };
+
         nixosConfigurations = {
             # My laptop
             "maxime" = nixpkgs.lib.nixosSystem rec {
-                system = "x86_64-linux";
-
-                specialArgs = {
-                    inherit inputs;
-
-                    unstable = import nixpkgs-unstable {
-                        inherit system;
-                        config.allowUnfree = true;
-                    };
-                };
-
+                specialArgs = { inherit inputs outputs; };
                 modules = [ ./nixos/maxime/configuration.nix ];
             };
         };

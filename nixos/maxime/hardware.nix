@@ -1,11 +1,10 @@
 {
-    config,
     inputs,
+    outputs,
     lib,
-    modulesPath,
-    options,
-    specialArgs,
-    unstable
+    config,
+    pkgs,
+    ...
 }: {
     hardware = {
         opentabletdriver.enable = true;

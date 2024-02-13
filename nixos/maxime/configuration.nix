@@ -1,12 +1,20 @@
 {
-    config,
     inputs,
+    outputs,
     lib,
-    modulesPath,
-    options,
-    specialArgs,
-    unstable
+    config,
+    pkgs,
+    ...
 }: {
+    nixpkgs = {
+        config.allowUnfree = true;
+        overlays = [
+            outputs.overlays.additions
+            outputs.overlays.modifications
+            outputs.overlays.unstable-packages
+        ];
+    };
+
     imports = [
         ./hardware-configuration.nix
 

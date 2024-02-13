@@ -1,12 +1,10 @@
 {
-    config,
     inputs,
+    outputs,
     lib,
-    modulesPath,
-    options,
+    config,
     pkgs,
-    specialArgs,
-    unstable
+    ...
 }: {
     services = {
         xserver = {
