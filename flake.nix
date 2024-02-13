@@ -29,16 +29,24 @@
         ];
 
         forAllSystems = nixpkgs.lib.genAttrs systems;
-    in {
+    in rec {
         packages = forAllSystems (system: import ./packages nixpkgs.legacyPackages.${system});
 
         overlays = import ./overlays { inherit inputs; };
 
         nixosConfigurations = {
             # My laptop
-            "maxime" = nixpkgs.lib.nixosSystem rec {
+            "maxime" = nixpkgs.lib.nixosSystem {
                 specialArgs = { inherit inputs outputs; };
                 modules = [ ./nixos/maxime/configuration.nix ];
+            };
+        };
+
+        homeConfigurations = {
+            "max@maxime" = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixosConfigurations."maxime".pkgs;
+                extraSpecialArgs = { inherit inputs outputs; };
+                modules = [ ./home/home.nix ];
             };
         };
     };
