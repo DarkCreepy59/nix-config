@@ -1,4 +1,7 @@
-pkgs: {
+{
+    pkgs,
+    ...
+}: {
     luastatus-config = pkgs.callPackage ./luastatus-config {};
 
     dwm-flexipatch = pkgs.callPackage ./dwm-flexipatch {};
