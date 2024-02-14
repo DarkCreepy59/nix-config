@@ -38,4 +38,6 @@
             ];
         };
     };
+
+    environment.systemPackages = [ pkgs.sddm-theme-corners ];
 }
