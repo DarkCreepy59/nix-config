@@ -27,5 +27,5 @@
         tmp.useTmpfs = true;
     };
 
-    systemd.package = pkgs.unstable.systemd;
+    systemd.package = pkgs.systemd;
 }
