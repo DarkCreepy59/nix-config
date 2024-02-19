@@ -9,6 +9,10 @@
             withTetrioPlus = true;
         };
 
+        discord-openasar = prev.discord.override {
+            withOpenASAR = true;
+        };
+
         mpv = prev.mpv.override {
             scripts = [ final.mpvScripts.mpris ];
         };

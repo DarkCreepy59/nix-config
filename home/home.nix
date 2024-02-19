@@ -36,7 +36,7 @@
 
         nyancat
         zathura
-        discord
+        discord-openasar
         pavucontrol
         unstable.gnome.nautilus
 
