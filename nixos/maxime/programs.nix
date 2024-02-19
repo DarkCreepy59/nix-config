@@ -15,6 +15,9 @@
 
         # Also blocks mihoyo telemetry
         anime-game-launcher.enable = true;
+
+        # Fix some warnings with GNOME apps
+        dconf.enable = true;
     };
 
     environment.systemPackages = with pkgs; [
@@ -28,5 +31,7 @@
         unzip
         wget
         zip
+
+        gnome.adwaita-icon-theme # Install icon theme for GNOME apps
     ];
 }
