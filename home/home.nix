@@ -31,7 +31,7 @@
     ];
 
     home.packages = with pkgs; [
-        osu-lazer-bin
+        unstable.osu-lazer-bin
         tetrio-desktop
 
         nyancat
