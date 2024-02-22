@@ -18,6 +18,11 @@
 
         # Fix some warnings with GNOME apps
         dconf.enable = true;
+
+        gnupg.agent = {
+            enable = true;
+            pinentryFlavor = "curses";
+        };
     };
 
     environment.systemPackages = with pkgs; [

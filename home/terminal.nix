@@ -63,6 +63,10 @@
             nix-direnv.enable = true;
         };
 
+        gpg = {
+            enable = true;
+        };
+
         git = {
             enable = true;
             userName = "Maxime Nordier";
