@@ -78,6 +78,10 @@
                 difftool.prompt = false;
                 difftool.trustExitCode = true;
             };
+            signing = {
+                signByDefault = true;
+                key = "5EACFB3942A75734";
+            };
         };
 
         # Neovim configuration is managed externally
