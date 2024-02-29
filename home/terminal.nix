@@ -63,9 +63,9 @@
             nix-direnv.enable = true;
         };
 
-        gpg = {
-            enable = true;
-        };
+        gpg.enable = true;
+
+        ripgrep.enable = true;
 
         git = {
             enable = true;
