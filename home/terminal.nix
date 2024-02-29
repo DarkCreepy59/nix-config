@@ -91,10 +91,11 @@
             defaultEditor = true;
 
             extraPackages = with pkgs; [
-                unstable.clang # clang for treesitter, should also include clangd
-                ripgrep        # for treesitter live grep
-                pyright        # for python lsp
-                xclip          # for clipboard
+                llvmPackages_17.clang   # clang for treesitter
+                clang-tools             # for clangd
+                ripgrep                 # for treesitter live grep
+                pyright                 # for python lsp
+                xclip                   # for clipboard
             ];
         };
     };
